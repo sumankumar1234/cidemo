@@ -7,8 +7,19 @@ pipeline {
   }
   stages {
     stage('Step1') {
-      steps {
-        sh 'echo "stage1"'
+      parallel {
+        stage('Step1') {
+          steps {
+            sh 'echo "stage1"'
+          }
+        }
+
+        stage('step2') {
+          steps {
+            sh 'echo "fun with blue ocean"'
+          }
+        }
+
       }
     }
 
