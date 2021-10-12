@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('Step1') {
       steps {
         sh 'echo "stage1"'
       }
